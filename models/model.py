@@ -41,3 +41,11 @@ class Model:
         else:
             self.data[restaurant_name] = 1
         self._save_data()
+
+    def most_recomended(self):
+        """
+        最もお勧めされたレストランの名前を取得する。
+        """
+        if not self.data:
+            return None
+        return max(self.data, key=self.data.get)
